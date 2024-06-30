@@ -24,15 +24,12 @@ export const CameraButton = () => {
 
   return (
     <div className="py-2">
-      <header>
-        <h1>camera app</h1>
-      </header>
       {isCaptureEnable || (
         <button
           className="bordered rounded-md bg-orange-300 p-4"
           onClick={() => setCaptureEnable(true)}
         >
-          start
+          Capture
         </button>
       )}
       {isCaptureEnable && (

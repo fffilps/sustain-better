@@ -35,7 +35,6 @@ urlpatterns = [
     path('api/user/posts', PostsView.as_view(), name='ai_hackathon_api'),
     path('api/user/post/status', PostStatusView.as_view(), name='ai_hackathon_api'),
 
-
     path('api/user', UserView.as_view(), name='ai_hackathon_api'),
     path('api/users', UsersView.as_view(), name='ai_hackathon_api'),
 

@@ -91,7 +91,7 @@ class TaskTypeView(APIView):
         try:
           obj = TaskType.objects.all()
           data = serializers.serialize('json', obj)
-          return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+          return JsonResponse(success_json("Successfully retrieved TaskType object", data), status=200)
         except Exception as e:
              return JsonResponse(fail_json(str(e)), status=404)
      
@@ -100,7 +100,20 @@ class TaskTypeView(APIView):
         try:
           obj = TaskType.objects.get_or_create(name=name)
           data = serializers.serialize('json', obj)
-          return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+          return JsonResponse(success_json("Successfully retrieved TaskType object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+     
+     def delete(self, request, format=None):
+        print("delete api call")
+        # id = request.data['id']
+        id = request.data['id']
+
+        try:
+          print("delete api call 2")
+          obj = TaskType.objects.get(id=id)
+          obj.delete()
+          return JsonResponse(success_json("Successfully deleted PostStatus object"), status=200)
         except Exception as e:
              return JsonResponse(fail_json(str(e)), status=404)
         
@@ -128,22 +141,37 @@ class TaskView(APIView):
         return JsonResponse(success_json("Successfully retrieved Task object", data), status=200)
      
      def post(self, request, *args, **kwargs):
+        print("got to the post")
+        print(request.data)
         type = request.data['type']
         amount_b3tr = request.data['amount_b3tr']
         company = request.data['company']
 
-        if not type:
-             return JsonResponse("Missing name POST param!", status=404)
+        if not type or not amount_b3tr or not company:
+             return JsonResponse("Missing name, amount_b3tr, company POST params!", status=404)
         try:
              task_type = TaskType.objects.get(name=type)
              co_obj = Company.objects.get(name=company)
 
              obj = Task.objects.get_or_create(amount_b3tr=amount_b3tr, type=task_type, company=co_obj)
-        except Role.DoesNotExist as e:
+        except Exception as e:
              print("RoleView:")
              return JsonResponse(fail_json(str(e)), status=404)
      
         return JsonResponse(success_json("Successfully updated Role object"), status=200)
+     
+     def delete(self, request, format=None):
+        print("delete api call")
+        # id = request.data['id']
+        id = request.data['id']
+
+        try:
+          print("delete api call 2")
+          obj = Task.objects.get(id=id)
+          obj.delete()
+          return JsonResponse(success_json("Successfully deleted Task object"), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
      
 class RoleView(APIView):
      def get(self, request, format=None):
@@ -273,15 +301,22 @@ class PostView(APIView):
           return JsonResponse(fail_json(str(e)), status=404)
         
         try:
-          obj = Post.objects.create(
+          post_status_obj = PostStatus.objects.get(status="pending")
+        except PostStatus.DoesNotExist as e:
+          print("PostView post:")
+          return JsonResponse(fail_json(str(e)), status=404)
+        
+        try:
+          obj = Post.objects.get_or_create(
                title=title, 
                latitude=latitude,
                longitude=longitude,
                img_bin=img_bin,
                img_waste=img_waste,
-               task_id=task_obj,
-               user_id=user_obj, 
-               company=co_obj
+               task=task_obj,
+               user=user_obj, 
+               company=co_obj,
+               status=post_status_obj
           )
         
           data = serializers.serialize('json', obj)

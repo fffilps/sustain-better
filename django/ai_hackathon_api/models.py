@@ -45,7 +45,7 @@ class Task(models.Model):
 # Pending, Paid, Expired
 class PostStatus(models.Model):
 	id = models.AutoField(primary_key=True)
-	status = models.CharField(max_length=50, unique=True, default='pending', editable=False)
+	status = models.CharField(max_length=50, unique=True, default='pending')
 
 	def __str__(self):
 		return self.status
@@ -60,7 +60,7 @@ class Post(models.Model):
 	task = models.ForeignKey(Task, on_delete=models.CASCADE)
 	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)
-	status = models.ForeignKey(PostStatus, on_delete=models.CASCADE)
+	status = models.ForeignKey(PostStatus, on_delete=models.CASCADE, null=True)
 
 	def __str__(self):
 		return self.title

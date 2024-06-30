@@ -37,6 +37,27 @@ class UserViewSet(viewsets.ModelViewSet):
 	queryset = SustainB3trUser.objects.all()
 	serializer_class = UserSerializer
 
+class PostStatusAIView(APIView):     
+     def post(self, request, *args, **kwargs):
+        id = request.data['id']
+
+        try:
+             post_obj = Post.objects.get(id=id)
+             #post_obj.img_bin
+             #post_obj.img_waste
+             # Run Tunan's code
+
+             #post_obj.img_bin_verified
+             #post_obj.img_waste_verified
+
+             post_status_obj = PostStatus.objects.get(status="ai-verified")
+             post_obj.status = post_status_obj 
+             return JsonResponse(success_json("Successfully retrieved PostStatusAIView object", post_obj), status=200)
+
+        except Exception as e:
+             print("PostStatusAIView:")
+             return JsonResponse(fail_json(str(e)), status=404)
+        
 class PostStatusView(APIView):
      def get(self, request, format=None):
         try:

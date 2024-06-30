@@ -57,6 +57,8 @@ class Post(models.Model):
 	title = models.TextField()
 	img_bin = models.ImageField()
 	img_waste = models.ImageField()
+	img_bin_verified = models.TextField(null=True)
+	img_waste_verified = models.TextField(null=True)
 	task = models.ForeignKey(Task, on_delete=models.CASCADE)
 	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)

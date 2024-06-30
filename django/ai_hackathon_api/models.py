@@ -49,16 +49,24 @@ class PostStatus(models.Model):
 
 	def __str__(self):
 		return self.status
-	
+
+class PostAIStats(models.Model):
+	id = models.AutoField(primary_key=True)
+	img_bin_color = models.CharField(max_length=50)
+	img_bin_area = models.FloatField()
+	img_waste_prob = models.FloatField(null=True)
+	img_waste_classify = models.TextField(null=True)
+
 class Post(models.Model):
 	id = models.AutoField(primary_key=True)
 	latitude = models.FloatField()
 	longitude = models.FloatField()
 	title = models.TextField()
+	
 	img_bin = models.ImageField()
 	img_waste = models.ImageField()
-	img_bin_verified = models.TextField(null=True)
-	img_waste_verified = models.TextField(null=True)
+
+	postAIStats = models.ForeignKey(PostAIStats, on_delete=models.CASCADE, null=True)
 	task = models.ForeignKey(Task, on_delete=models.CASCADE)
 	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)

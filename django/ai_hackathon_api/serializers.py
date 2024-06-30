@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Company, Role, SustainB3trUser, TaskType, PostStatus
+from .models import Company, Role, SustainB3trUser, TaskType, PostStatus, Post, PostAIStats
 
 class CompanySerializer(serializers.ModelSerializer):
 	class Meta:
@@ -31,4 +31,12 @@ class PostStatusViewSerializer(serializers.ModelSerializer):
 		model = PostStatus
 		fields = ['id', 'status']
 		
-		
+class PostViewSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Post
+		fields = ['id', 'latitude', 'longitude', 'title', 'img_bin', 'img_waste', 'postAIStats', 'task', 'user', 'company', 'status']
+
+class PostAIStatsViewSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = PostAIStats
+		fields = ['id', 'img_bin_color', 'img_bin_area', 'img_waste_prob', 'img_waste_classify']

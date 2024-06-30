@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from ai_hackathon import settings
 from rest_framework.routers import DefaultRouter
-from ai_hackathon_api.views import CompanyViewSet, PostStatusView, RolesView, TaskTypeView, UsersView, TaskView, PostView, PostsView, CompanyView, CompaniesView, FileUploadView, RoleViewSet, UserView, RoleView
+from ai_hackathon_api.views import CompanyViewSet, PostStatusAIView, PostStatusView, RolesView, TaskTypeView, UsersView, TaskView, PostView, PostsView, CompanyView, CompaniesView, FileUploadView, RoleViewSet, UserView, RoleView
 from django.conf.urls.static import static
 
 
@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/user/post', PostView.as_view(), name='ai_hackathon_api'),
     path('api/user/posts', PostsView.as_view(), name='ai_hackathon_api'),
     path('api/user/post/status', PostStatusView.as_view(), name='ai_hackathon_api'),
+    path('api/user/post/ai', PostStatusAIView.as_view(), name='ai_hackathon_api'),
 
     path('api/user', UserView.as_view(), name='ai_hackathon_api'),
     path('api/users', UsersView.as_view(), name='ai_hackathon_api'),

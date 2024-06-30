@@ -1,7 +1,7 @@
 import json
 import boto3
 from django.shortcuts import render
-from .models import Company, Role, SustainB3trUser, User, Post, Task, TaskType, PostStatus
+from .models import Company, PostAIStats, Role, SustainB3trUser, User, Post, Task, TaskType, PostStatus
 from .serializers import CompanySerializer, RoleSerializer, UserSerializer
 from wsgiref.util import FileWrapper
 from django.http import HttpResponse, Http404, JsonResponse
@@ -37,21 +37,47 @@ class UserViewSet(viewsets.ModelViewSet):
 	queryset = SustainB3trUser.objects.all()
 	serializer_class = UserSerializer
 
-class PostStatusAIView(APIView):     
-     def post(self, request, *args, **kwargs):
+class PostStatusAIView(APIView): 
+     def delete(self, request, format=None):
+        print("delete api call")
+        # id = request.data['id']
         id = request.data['id']
 
         try:
+          print("delete api call 2")
+          obj = PostAIStats.objects.get(id=id)
+          obj.delete()
+          return JsonResponse(success_json("Successfully deleted PostStatusAIView object"), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+     def get(self, request, format=None):
+        try:
+          obj = PostAIStats.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved PostAIStats object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+           
+     def post(self, request, *args, **kwargs):
+        print("postStatusAI View")
+        id = request.data['id']
+        
+        try:
              post_obj = Post.objects.get(id=id)
-             #post_obj.img_bin
-             #post_obj.img_waste
+             
              # Run Tunan's code
-
-             #post_obj.img_bin_verified
-             #post_obj.img_waste_verified
+             img_bin_color = "" 
+             img_bin_area = 0 
+             img_waste_prob = 0 
+             img_waste_classify = "" 
+             
+             post_ai_obj = PostAIStats.objects.create(img_bin_color=img_bin_color, img_bin_area=img_bin_area, img_waste_prob=img_waste_prob, img_waste_classify=img_waste_classify)
+             post_obj.postAIStats = post_ai_obj
 
              post_status_obj = PostStatus.objects.get(status="ai-verified")
              post_obj.status = post_status_obj 
+             post_obj.save()
              return JsonResponse(success_json("Successfully retrieved PostStatusAIView object", post_obj), status=200)
 
         except Exception as e:

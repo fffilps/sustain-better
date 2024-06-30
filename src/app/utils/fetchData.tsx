@@ -6,11 +6,11 @@ export default function Home() {
 
   useEffect(() => {
     const getData = async () => {
-      const query = await fetch("https://api.weather.gov/openapi.json");
+      const query = await fetch("https://api.weather.gov/alerts/active");
       const response = await query.json();
       console.log(
         "Response from API ",
-        response.components.responses.Observation.description,
+        response
       );
       setPathDescriptions(
         response.components.responses.Observation.description,

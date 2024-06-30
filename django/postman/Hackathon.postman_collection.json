@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "250dc96a-8fb2-4a60-8ad2-bf0f85cefe90",
+		"name": "Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "553666",
+		"_collection_link": "https://carbonsustain.postman.co/workspace/CarbonSustain~aa377f54-a0cf-4760-b4d2-8db19baa5078/collection/553666-250dc96a-8fb2-4a60-8ad2-bf0f85cefe90?action=share&source=collection_link&creator=553666"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/company",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateCompanyReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/generateCompanyReport?companyName=Amazon",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"generateCompanyReport"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Amazon"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formatCompanyEmotions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/formatCompanyEmotions?companyName=Apple",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"formatCompanyEmotions"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Apple"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/companyReport?reportUrl=./media/companies/Chevron/Chevron_NYSE_CVX_2010.pdf",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companyReport"
+					],
+					"query": [
+						{
+							"key": "reportUrl",
+							"value": "./media/companies/Chevron/Chevron_NYSE_CVX_2010.pdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyReport",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/companyReport?companyName=Evoqua%20Water%20Technologies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companyReport"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Evoqua%20Water%20Technologies"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyReportViewSet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/companyReportViewSet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companyReportViewSet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyEmotionsViewSet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/companyEmotionsViewSet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"companyEmotionsViewSet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/companies/Apple/Apple_NASDAQ_AAPL_2022_WmnfSQ7.pdf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/companies/Apple/Apple_NASDAQ_AAPL_2022_WmnfSQ7.pdf",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"companies",
+						"Apple",
+						"Apple_NASDAQ_AAPL_2022_WmnfSQ7.pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

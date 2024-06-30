@@ -1,0 +1,1125 @@
+[
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 1,
+  "fields": {
+    "name": "Chevron",
+    "youtube_url": "https://www.youtube.com/watch?v=elyMmfUFr-g",
+    "is_good": false
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 2,
+  "fields": {
+    "name": "Vistra Energy",
+    "youtube_url": "https://www.youtube.com/watch?v=1MYIi4DXiDE",
+    "is_good": false
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 3,
+  "fields": {
+    "name": "Southern Company",
+    "youtube_url": "https://www.youtube.com/watch?v=4o3-UjQJ-Ds",
+    "is_good": false
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 4,
+  "fields": {
+    "name": "Exxon Mobil",
+    "youtube_url": "https://www.youtube.com/watch?v=tKMCq7VF7hI",
+    "is_good": false
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 5,
+  "fields": {
+    "name": "Duke Energy",
+    "youtube_url": "https://www.youtube.com/watch?v=cVuEOFjA2gQ",
+    "is_good": false
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 6,
+  "fields": {
+    "name": "Microsoft",
+    "youtube_url": "https://www.youtube.com/watch?v=LeQxTI-s48A",
+    "is_good": true
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 7,
+  "fields": {
+    "name": "Schnitzer",
+    "youtube_url": "https://www.youtube.com/watch?v=eH2t5ZMaJs8",
+    "is_good": true
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 8,
+  "fields": {
+    "name": "Apple",
+    "youtube_url": "https://www.youtube.com/watch?v=pIZxu4l_y14",
+    "is_good": true
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 9,
+  "fields": {
+    "name": "Evoqua Water Technologies",
+    "youtube_url": "https://www.youtube.com/watch?v=XxPsTxI_NbA",
+    "is_good": true
+  }
+},
+{
+  "model": "ai_hackathon_api.company",
+  "pk": 10,
+  "fields": {
+    "name": "Amazon",
+    "youtube_url": "https://www.youtube.com/watch?v=oqkeLcQeOso&t=18s",
+    "is_good": true
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 1,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2021_66D1W6D.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2021.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 2,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2020_is2ao9Z.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2020.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 3,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2019_AXTqYGj.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2019.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 4,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2018_Qo42kIj.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2018.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 5,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2016_wrTbUMi.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2016.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 6,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2015_5ToXFuO.pdf",
+    "pdf_name": "./media/companies/Evoqua_Water_Technologies/Evoqua_Water_Technologies_NYSE_AQUA_2015.pdf",
+    "company": 9
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 7,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2021.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2021.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 8,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2020.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2020.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 9,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2019.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2019.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 10,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2018.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2018.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 11,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2017.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2017.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 12,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2016.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2016.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 13,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2015.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2015.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 14,
+  "fields": {
+    "year": 2014,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2014.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2014.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 15,
+  "fields": {
+    "year": 2013,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2013.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2013.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 16,
+  "fields": {
+    "year": 2012,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2012.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2012.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 17,
+  "fields": {
+    "year": 2011,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2011.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2011.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 18,
+  "fields": {
+    "year": 2010,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2010.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2010.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 19,
+  "fields": {
+    "year": 2009,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2009.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2009.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 20,
+  "fields": {
+    "year": 2008,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2008.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2008.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 21,
+  "fields": {
+    "year": 2007,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2007.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2007.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 22,
+  "fields": {
+    "year": 2006,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2006.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2006.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 23,
+  "fields": {
+    "year": 2005,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2005.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2005.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 24,
+  "fields": {
+    "year": 2004,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2004.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2004.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 25,
+  "fields": {
+    "year": 2003,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2003.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2003.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 26,
+  "fields": {
+    "year": 2002,
+    "pdf": "companies/Chevron/Chevron_NYSE_CVX_2002.pdf",
+    "pdf_name": "./media/companies/Chevron/Chevron_NYSE_CVX_2002.pdf",
+    "company": 1
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 27,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2021.pdf",
+    "pdf_name": "./media/companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2021.pdf",
+    "company": 2
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 28,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2020.pdf",
+    "pdf_name": "./media/companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2020.pdf",
+    "company": 2
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 29,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2019.pdf",
+    "pdf_name": "./media/companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2019.pdf",
+    "company": 2
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 30,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2018.pdf",
+    "pdf_name": "./media/companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2018.pdf",
+    "company": 2
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 31,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2017.pdf",
+    "pdf_name": "./media/companies/Vistra_Energy/Vistra_Energy_NYSE_VST_2017.pdf",
+    "company": 2
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 32,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Southern_Company/Southern_Company_NYSE_SO_2021.pdf",
+    "pdf_name": "./media/companies/Southern_Company/Southern_Company_NYSE_SO_2021.pdf",
+    "company": 3
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 33,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Southern_Company/Southern_Company_NYSE_SO_2020.pdf",
+    "pdf_name": "./media/companies/Southern_Company/Southern_Company_NYSE_SO_2020.pdf",
+    "company": 3
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 34,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Southern_Company/Southern_Company_NYSE_SO_2018.pdf",
+    "pdf_name": "./media/companies/Southern_Company/Southern_Company_NYSE_SO_2018.pdf",
+    "company": 3
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 35,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Southern_Company/Southern_Company_NYSE_SO_2017.pdf",
+    "pdf_name": "./media/companies/Southern_Company/Southern_Company_NYSE_SO_2017.pdf",
+    "company": 3
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 36,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Southern_Company/Southern_Company_NYSE_SO_2016.pdf",
+    "pdf_name": "./media/companies/Southern_Company/Southern_Company_NYSE_SO_2016.pdf",
+    "company": 3
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 37,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2021.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2021.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 38,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2019.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2019.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 39,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2018.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2018.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 40,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2017.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2017.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 41,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2016.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2016.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 42,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2015.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2015.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 43,
+  "fields": {
+    "year": 2014,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2014.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2014.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 44,
+  "fields": {
+    "year": 2013,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2013.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2013.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 45,
+  "fields": {
+    "year": 2012,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2012.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2012.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 46,
+  "fields": {
+    "year": 2011,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2011.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2011.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 47,
+  "fields": {
+    "year": 2010,
+    "pdf": "companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2010.pdf",
+    "pdf_name": "./media/companies/Exxon_Mobil/Exxon_Mobil_NYSE_XOM_2010.pdf",
+    "company": 4
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 48,
+  "fields": {
+    "year": 2022,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2022.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2022.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 49,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2021.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2021.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 50,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2020.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2020.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 51,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2019.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2019.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 52,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2018.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2018.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 53,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2017.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2017.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 54,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2016.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2016.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 55,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2015.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2015.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 56,
+  "fields": {
+    "year": 2014,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2014.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2014.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 57,
+  "fields": {
+    "year": 2013,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2013.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2013.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 58,
+  "fields": {
+    "year": 2012,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2012.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2012.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 59,
+  "fields": {
+    "year": 2011,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2011.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2011.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 60,
+  "fields": {
+    "year": 2010,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2010.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2010.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 61,
+  "fields": {
+    "year": 2009,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2009.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2009.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 62,
+  "fields": {
+    "year": 2008,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2008.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2008.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 63,
+  "fields": {
+    "year": 2007,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2007.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2007.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 64,
+  "fields": {
+    "year": 2006,
+    "pdf": "companies/Duke_Energy/Duke_Energy_NYSE_DUK_2006.pdf",
+    "pdf_name": "./media/companies/Duke_Energy/Duke_Energy_NYSE_DUK_2006.pdf",
+    "company": 5
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 65,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2021.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2021.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 66,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2020.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2020.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 67,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2019.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2019.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 68,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2018.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2018.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 69,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2017.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2017.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 70,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2016.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2016.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 71,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2015.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2015.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 72,
+  "fields": {
+    "year": 2014,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2014.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2014.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 73,
+  "fields": {
+    "year": 2013,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2013.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2013.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 74,
+  "fields": {
+    "year": 2012,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2012.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2012.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 75,
+  "fields": {
+    "year": 2011,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2011.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2011.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 76,
+  "fields": {
+    "year": 2010,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2010.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2010.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 77,
+  "fields": {
+    "year": 2009,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2009.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2009.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 78,
+  "fields": {
+    "year": 2007,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2007.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2007.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 79,
+  "fields": {
+    "year": 2006,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2006.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2006.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 80,
+  "fields": {
+    "year": 2005,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2005.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2005.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 81,
+  "fields": {
+    "year": 2004,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2004.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2004.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 82,
+  "fields": {
+    "year": 2003,
+    "pdf": "companies/Microsoft/Microsoft_NASDAQ_MSFT_2003.pdf",
+    "pdf_name": "./media/companies/Microsoft/Microsoft_NASDAQ_MSFT_2003.pdf",
+    "company": 6
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 83,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2021.pdf",
+    "pdf_name": "./media/companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2021.pdf",
+    "company": 7
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 84,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2020.pdf",
+    "pdf_name": "./media/companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2020.pdf",
+    "company": 7
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 85,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2019.pdf",
+    "pdf_name": "./media/companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2019.pdf",
+    "company": 7
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 86,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2018.pdf",
+    "pdf_name": "./media/companies/Schnitzer/Schnitzer_NASDAQ_SCHN_2018.pdf",
+    "company": 7
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 87,
+  "fields": {
+    "year": 2022,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2022_3ykT6ew.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2022.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 88,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2021_M5rKzZD.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2021.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 89,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2019_T7S2EWc.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2019.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 90,
+  "fields": {
+    "year": 2018,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2018_DKyk7OD.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2018.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 91,
+  "fields": {
+    "year": 2017,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2017_BT8w7SE.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2017.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 92,
+  "fields": {
+    "year": 2016,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2016_gDajoOV.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2016.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 93,
+  "fields": {
+    "year": 2015,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2015_9oiEdUJ.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2015.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 94,
+  "fields": {
+    "year": 2014,
+    "pdf": "companies/Apple/Apple_NASDAQ_AAPL_2014_gNVELOr.pdf",
+    "pdf_name": "./media/companies/Apple/Apple_NASDAQ_AAPL_2014.pdf",
+    "company": 8
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 95,
+  "fields": {
+    "year": 2021,
+    "pdf": "companies/Amazon/Amazon_NASDAQ_AMZN_2021.pdf",
+    "pdf_name": "./media/companies/Amazon/Amazon_NASDAQ_AMZN_2021.pdf",
+    "company": 10
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 96,
+  "fields": {
+    "year": 2020,
+    "pdf": "companies/Amazon/Amazon_NASDAQ_AMZN_2020.pdf",
+    "pdf_name": "./media/companies/Amazon/Amazon_NASDAQ_AMZN_2020.pdf",
+    "company": 10
+  }
+},
+{
+  "model": "ai_hackathon_api.companyreport",
+  "pk": 97,
+  "fields": {
+    "year": 2019,
+    "pdf": "companies/Amazon/Amazon_NASDAQ_AMZN_2019.pdf",
+    "pdf_name": "./media/companies/Amazon/Amazon_NASDAQ_AMZN_2019.pdf",
+    "company": 10
+  }
+},
+{
+  "model": "ai_hackathon_api.companyemotions",
+  "pk": 1,
+  "fields": {
+    "year": 2020,
+    "company": 10,
+    "emotions": {
+      "Admiration": 0.006969765294343233,
+      "Adoration": 0.004095280542969704,
+      "Aesthetic Appreciation": 0.008455632254481316,
+      "Amusement": 0.04133431985974312,
+      "Anger": 0.023253774270415306,
+      "Annoyance": 0.06546903401613235,
+      "Anxiety": 0.006687916349619627,
+      "Awe": 0.003972860053181648,
+      "Awkwardness": 0.062378548085689545,
+      "Boredom": 0.06323643773794174,
+      "Calmness": 0.19649076461791992,
+      "Concentration": 0.012385785579681396,
+      "Confusion": 0.031034324318170547,
+      "Contemplation": 0.023730864748358727,
+      "Contempt": 0.09336597472429276,
+      "Contentment": 0.08961819857358932,
+      "Craving": 0.007587576750665903,
+      "Determination": 0.02046712301671505,
+      "Disappointment": 0.02584371715784073,
+      "Disapproval": 0.05643100291490555,
+      "Disgust": 0.03584074229001999,
+      "Distress": 0.010845978744328022,
+      "Doubt": 0.027473047375679016,
+      "Ecstasy": 0.005543668754398823,
+      "Embarrassment": 0.006659138016402721,
+      "Empathic Pain": 0.005550544708967209,
+      "Enthusiasm": 0.042044609785079956,
+      "Entrancement": 0.004966766573488712,
+      "Envy": 0.0034583245869725943,
+      "Excitement": 0.016749940812587738,
+      "Fear": 0.004232501611113548,
+      "Gratitude": 0.0131398169323802,
+      "Guilt": 0.0033327005803585052,
+      "Horror": 0.0026400936767458916,
+      "Interest": 0.04139666259288788,
+      "Joy": 0.035475604236125946,
+      "Love": 0.006410847883671522,
+      "Nostalgia": 0.0007713937084190547,
+      "Pain": 0.005463996436446905,
+      "Pride": 0.006567392032593489,
+      "Realization": 0.09476903825998306,
+      "Relief": 0.02034468948841095,
+      "Romance": 0.0037279578391462564,
+      "Sadness": 0.006168522406369448,
+      "Sarcasm": 0.10832670331001282,
+      "Satisfaction": 0.07575514167547226,
+      "Desire": 0.006221955642104149,
+      "Shame": 0.009941351599991322,
+      "Surprise (negative)": 0.04725605621933937,
+      "Surprise (positive)": 0.0494815893471241,
+      "Sympathy": 0.010115181095898151,
+      "Tiredness": 0.014306430704891682,
+      "Triumph": 0.018857261165976524
+    }
+  }
+}
+]

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // source: https://www.npmjs.com/package/react-webcam
 // source: https://dev.to/sababg/react-webcam-typescript-gh2
 import { useRef, useState, useCallback } from "react";
@@ -8,7 +8,7 @@ import Image from "next/image";
 const videoConstraints = {
   width: 720,
   height: 360,
-  facingMode: "user"
+  facingMode: "user",
 };
 
 export const CameraButton = () => {
@@ -28,7 +28,12 @@ export const CameraButton = () => {
         <h1>camera app</h1>
       </header>
       {isCaptureEnable || (
-        <button className="bordered rounded-md bg-orange-300 p-4" onClick={() => setCaptureEnable(true)}>start</button>
+        <button
+          className="bordered rounded-md bg-orange-300 p-4"
+          onClick={() => setCaptureEnable(true)}
+        >
+          start
+        </button>
       )}
       {isCaptureEnable && (
         <>
@@ -60,7 +65,12 @@ export const CameraButton = () => {
             </button>
           </div>
           <div>
-            <Image src={url} alt="Screenshot" width={videoConstraints.width} height={videoConstraints.height} />
+            <Image
+              src={url}
+              alt="Screenshot"
+              width={videoConstraints.width}
+              height={videoConstraints.height}
+            />
           </div>
         </>
       )}
@@ -68,4 +78,4 @@ export const CameraButton = () => {
   );
 };
 
-export default CameraButton
+export default CameraButton;

@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 
 type Props = {
-    // profile: {}
+  // profile: {}
 };
 
-const LocationButton = (props : Props) => {
+const LocationButton = (props: Props) => {
   const [longitude, setLongitude] = useState(Number);
   const [latitude, setLatitude] = useState(Number);
-
 
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition(
@@ -32,10 +31,9 @@ const LocationButton = (props : Props) => {
             console.log("An unknown error occurred.");
             break;
         }
-      }
+      },
     );
   };
-
 
   return (
     <div className="flex flex-col gap-3 py-2">

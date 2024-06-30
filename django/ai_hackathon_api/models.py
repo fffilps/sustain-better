@@ -45,22 +45,22 @@ class Task(models.Model):
 # Pending, Paid, Expired
 class PostStatus(models.Model):
 	id = models.AutoField(primary_key=True)
-	status = models.CharField(max_length=50, unique=True)
+	status = models.CharField(max_length=50, unique=True, default='pending', editable=False)
 
 	def __str__(self):
 		return self.status
 	
 class Post(models.Model):
 	id = models.AutoField(primary_key=True)
-	task = models.ForeignKey(Task, on_delete=models.CASCADE)
-	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
 	latitude = models.FloatField()
 	longitude = models.FloatField()
 	title = models.TextField()
 	img_bin = models.ImageField()
 	img_waste = models.ImageField()
+	task = models.ForeignKey(Task, on_delete=models.CASCADE)
+	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)
 	status = models.ForeignKey(PostStatus, on_delete=models.CASCADE)
-	
+
 	def __str__(self):
 		return self.title

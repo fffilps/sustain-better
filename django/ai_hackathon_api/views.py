@@ -54,6 +54,19 @@ class PostStatusView(APIView):
           return JsonResponse(success_json("Successfully retrieved PostStatus object", data), status=200)
         except Exception as e:
              return JsonResponse(fail_json(str(e)), status=404)
+     
+     def delete(self, request, format=None):
+        print("delete api call")
+        # id = request.data['id']
+        status = request.data['status']
+
+        try:
+          print("delete api call 2")
+          obj = PostStatus.objects.get(status=status)
+          obj.delete()
+          return JsonResponse(success_json("Successfully deleted PostStatus object"), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
         
 class CompaniesView(APIView):
      def get(self, request, format=None):

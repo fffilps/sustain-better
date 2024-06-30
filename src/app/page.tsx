@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <div className="flex flex-col gap-3 divide-y-2 p-2">
-        <h1 className="text-6xl">Sustain Better
+        <h1 className="text-6xl bordered rounded-md bg-orange-300 p-4">Sustain Better
           <ConnectWalletButton/>
           </h1>
         <LocationButton />

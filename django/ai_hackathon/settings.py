@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     'ai_hackathon_api',
+    'users',
     'rest_framework',
     "storages",
 ]
@@ -108,8 +109,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ai_hackathon.wsgi.application"
 
-
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -119,7 +118,6 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

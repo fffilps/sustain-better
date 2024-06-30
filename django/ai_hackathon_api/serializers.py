@@ -1,21 +1,34 @@
 from rest_framework import serializers
-from .models import Company, CompanyReport, CompanyEmotions
+from .models import Company, Role, SustainB3trUser, TaskType, PostStatus
 
 class CompanySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Company
-		fields = ['id', 'name', 'is_good', 'youtube_url']
+		fields = ['id', 'name']
 
-class CompanyReportSerializer(serializers.ModelSerializer):
-	company_name = serializers.ReadOnlyField(source='company.name')
-
+class RoleSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = CompanyReport
-		fields = "__all__"
+		model = Role
+		fields = ['id', 'name']
 
-class CompanyEmotionsSerializer(serializers.ModelSerializer):
-	company_name = serializers.ReadOnlyField(source='company.name')
-
+class UserSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = CompanyEmotions
-		fields = "__all__"
+		model = SustainB3trUser
+		fields = ['id', 'username', 'password', 'wallet', 'role']
+
+class CompanySerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Company
+		fields = ['id', 'name']
+
+class TaskTypeViewSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = TaskType
+		fields = ['id', 'name']
+
+class PostStatusViewSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = PostStatus
+		fields = ['id', 'status']
+		
+		

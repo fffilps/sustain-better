@@ -1,38 +1,66 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+# admin, business, user
+class Role(models.Model):
+	id = models.AutoField(primary_key=True)
+	name = models.CharField(max_length=50, unique=True)
+
+	def __str__(self):
+		return self.name
+	
+class SustainB3trUser(models.Model):
+	id = models.AutoField(primary_key=True)
+	username = models.CharField(max_length=100)
+	password = models.CharField(max_length=100)
+	wallet = models.CharField(max_length=100, unique=True)
+	role = models.ForeignKey(Role, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.wallet
+	
 class Company(models.Model):
 	id = models.AutoField(primary_key=True)
 	name = models.CharField(max_length=200)
-	youtube_url = models.CharField(max_length=200, default="")
-	is_good = models.BooleanField()
 
 	def __str__(self):
 		return self.name
 
-class CompanyReport(models.Model):
+class TaskType(models.Model):
 	id = models.AutoField(primary_key=True)
-	year = models.IntegerField()
-	pdf = models.FileField()
-	pdf_name = models.CharField(default="",max_length=200)
-	company = models.ForeignKey(Company, on_delete=models.CASCADE)
-
-	class Meta:
-		unique_together = ('year', 'company',)
+	name = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.company.name + " " + self.year
-
-# Create your models here.
-class CompanyEmotions(models.Model):
+		return self.name
+	
+class Task(models.Model):
 	id = models.AutoField(primary_key=True)
-	year = models.IntegerField()
+	type = models.ForeignKey(TaskType, on_delete=models.CASCADE)
+	amount_b3tr = models.FloatField()
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)
-	emotions = models.JSONField()
-	ai_gen_path = models.CharField(default="",max_length=200)
-
-	class Meta:
-		unique_together = ('year', 'company',)
 
 	def __str__(self):
-		return self.company.name + " " + self.year
+		return self.name
+
+# Pending, Paid, Expired
+class PostStatus(models.Model):
+	id = models.AutoField(primary_key=True)
+	status = models.CharField(max_length=50, unique=True)
+
+	def __str__(self):
+		return self.status
+	
+class Post(models.Model):
+	id = models.AutoField(primary_key=True)
+	task = models.ForeignKey(Task, on_delete=models.CASCADE)
+	user = models.ForeignKey(SustainB3trUser, on_delete=models.CASCADE)
+	latitude = models.FloatField()
+	longitude = models.FloatField()
+	title = models.TextField()
+	img_bin = models.ImageField()
+	img_waste = models.ImageField()
+	company = models.ForeignKey(Company, on_delete=models.CASCADE)
+	status = models.ForeignKey(PostStatus, on_delete=models.CASCADE)
+	
+	def __str__(self):
+		return self.title

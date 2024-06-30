@@ -18,25 +18,33 @@ from django.contrib import admin
 from django.urls import include, path
 from ai_hackathon import settings
 from rest_framework.routers import DefaultRouter
-from ai_hackathon_api.views import CompanyViewSet, GenerateCompanyReportView, CompanyReportViewSet, CompanyReportView, CompanyEmotionsViewSet, FormatCompanyEmotionsView, CompanyView, GenerateCompanyEmotionsView, CompaniesView, FileUploadView
+from ai_hackathon_api.views import CompanyViewSet, PostStatusView, RolesView, TaskTypeView, UsersView, TaskView, PostView, PostsView, CompanyView, CompaniesView, FileUploadView, RoleViewSet, UserView, RoleView
 from django.conf.urls.static import static
 
 
 router = DefaultRouter()
 router.register(r'companies', CompanyViewSet)
-router.register(r'companyReportViewSet', CompanyReportViewSet)
-router.register(r'companyEmotionsViewSet', CompanyEmotionsViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/', include((router.urls, 'ai_hackathon_api'), namespace='ai_hackathon_api')),
     path('api/companies', CompaniesView.as_view(), name='ai_hackathon_api'),
-    path('api/generateCompanyReport', GenerateCompanyReportView.as_view(), name='ai_hackathon_api'),
-    path('api/generateEmotions', GenerateCompanyEmotionsView.as_view(), name='ai_hackathon_api'),
-    path('api/companyReport', CompanyReportView.as_view(), name='ai_hackathon_api'),
-    path('api/formatCompanyEmotions', FormatCompanyEmotionsView.as_view(), name='ai_hackathon_api'),
     path('api/company', CompanyView.as_view(), name='ai_hackathon_api'),
     path('upload/', FileUploadView.as_view(), name='file-upload'),
+    path('api/user/post', PostView.as_view(), name='ai_hackathon_api'),
+    path('api/user/posts', PostsView.as_view(), name='ai_hackathon_api'),
+    path('api/user/post/status', PostStatusView.as_view(), name='ai_hackathon_api'),
+
+
+    path('api/user', UserView.as_view(), name='ai_hackathon_api'),
+    path('api/users', UsersView.as_view(), name='ai_hackathon_api'),
+
+    path('api/user/role', RoleView.as_view(), name='ai_hackathon_api'),
+    path('api/user/roles', RolesView.as_view(), name='ai_hackathon_api'),
+
+    path('api/company/task', TaskView.as_view(), name='ai_hackathon_api'),
+    path('api/company/task/type', TaskTypeView.as_view(), name='ai_hackathon_api'),
+
 ]
 
 if settings.DEBUG:

@@ -1,20 +1,18 @@
 import json
 import boto3
 from django.shortcuts import render
-
-from .emotions_json_formatter import EmotionsUploader
-from .aws_sdxl import SDXL
-
-from .models import Company, CompanyReport, CompanyEmotions
-from .serializers import CompanySerializer, CompanyReportSerializer, CompanyEmotionsSerializer
-from .sustainability_report_downloader import SustainabilityReportDownloader
+from .models import Company, Role, SustainB3trUser, User, Post, Task, TaskType, PostStatus
+from .serializers import CompanySerializer, RoleSerializer, UserSerializer
 from wsgiref.util import FileWrapper
 from django.http import HttpResponse, Http404, JsonResponse
 import os
+from django.core import serializers
+
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
+
 
 def success_json(msg, data ={}):
      return {
@@ -30,36 +28,33 @@ def fail_json(msg):
 class CompanyViewSet(viewsets.ModelViewSet):
 	queryset = Company.objects.all()
 	serializer_class = CompanySerializer
+    
+class RoleViewSet(viewsets.ModelViewSet):
+	queryset = Role.objects.all()
+	serializer_class = RoleSerializer
 
-class CompanyReportViewSet(viewsets.ModelViewSet):
-	queryset = CompanyReport.objects.all()
-	serializer_class = CompanyReportSerializer
+class UserViewSet(viewsets.ModelViewSet):
+	queryset = SustainB3trUser.objects.all()
+	serializer_class = UserSerializer
 
-class CompanyEmotionsViewSet(viewsets.ModelViewSet):
-	queryset = CompanyEmotions.objects.all()
-	serializer_class = CompanyEmotionsSerializer
-
-class GenerateCompanyEmotionsView(APIView):
-    def put(self, request, format=None):
-        company_name = request.GET.get('companyName', '')
-        report_year = request.GET.get('reportYear', '')
-        if not (company_name):
-             return JsonResponse("companyName is a required PUT param!")
-        
+class PostStatusView(APIView):
+     def get(self, request, format=None):
         try:
-             company_obj = Company.objects.get(name=company_name)
-
-             emotions = CompanyEmotions.objects.filter(company=company_obj)
-             for emotion in emotions:
-                  sdxl = SDXL(emotion.emotions, company_name, report_year)
-                  img_bytes = sdxl.get_bytes()
-                  sdxl.save_image(img_bytes)
-                  
+          obj = PostStatus.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved PostStatus object", data), status=200)
         except Exception as e:
              return JsonResponse(fail_json(str(e)), status=404)
-
-        return JsonResponse(success_json("Successfully updated CompanyEmotions object"), status=200)
-
+     
+     def post(self, request, *args, **kwargs):
+        status = request.data['status']
+        try:
+          obj = PostStatus.objects.get_or_create(status=status)
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved PostStatus object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
 class CompaniesView(APIView):
      def get(self, request, format=None):
         company_type = request.GET.get('type', '')
@@ -78,8 +73,233 @@ class CompaniesView(APIView):
 
         return JsonResponse(success_json("Successfully updated Company object"), status=200)
 
+class TaskTypeView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = TaskType.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
      
+     def post(self, request, *args, **kwargs):
+        name = request.data['name']
+        try:
+          obj = TaskType.objects.get_or_create(name=name)
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+class RolesView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = Role.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+
+class TaskView(APIView):
+     def get(self, request, format=None):
+        name = request.GET.get('name', '')
+        try:
+          if name:
+              obj = Task.objects.get(name=name)
+          else:
+              obj = Task.objects.all()
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+        data = serializers.serialize('json', obj)
+        return JsonResponse(success_json("Successfully retrieved Task object", data), status=200)
+     
+     def post(self, request, *args, **kwargs):
+        type = request.data['type']
+        amount_b3tr = request.data['amount_b3tr']
+        company = request.data['company']
+
+        if not type:
+             return JsonResponse("Missing name POST param!", status=404)
+        try:
+             task_type = TaskType.objects.get(name=type)
+             co_obj = Company.objects.get(name=company)
+
+             obj = Task.objects.get_or_create(amount_b3tr=amount_b3tr, type=task_type, company=co_obj)
+        except Role.DoesNotExist as e:
+             print("RoleView:")
+             return JsonResponse(fail_json(str(e)), status=404)
+     
+        return JsonResponse(success_json("Successfully updated Role object"), status=200)
+     
+class RoleView(APIView):
+     def get(self, request, format=None):
+        name = request.GET.get('name', '')
+        try:
+          if name:
+              obj = Role.objects.get(name=name)
+          else:
+              obj = Role.objects.all()
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+        data = serializers.serialize('json', obj)
+        return JsonResponse(success_json("Successfully retrieved Role object", data), status=200)
+     
+     def post(self, request, *args, **kwargs):
+        name = request.data['name']
+
+        if not name:
+             return JsonResponse("Missing name POST param!", status=404)
+        try:
+             obj = Role.objects.get_or_create(name=name)
+        except Role.DoesNotExist as e:
+             print("RoleView:")
+             return JsonResponse(fail_json(str(e)), status=404)
+     
+        return JsonResponse(success_json("Successfully updated Role object"), status=200)
+
+class UsersView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = SustainB3trUser.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully got the User object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+
+class UserView(APIView):
+     def get(self, request, format=None):
+        wallet = request.GET.get('wallet', '')
+        try:
+             if wallet:
+               print("wallet " + wallet)
+               obj = SustainB3trUser.objects.get(wallet=wallet)
+               data = serializers.serialize('json', obj)
+
+               return JsonResponse(success_json("Successfully got the User object", data), status=200)
+             else: 
+               obj = SustainB3trUser.objects.all()
+               data = serializers.serialize('json', obj)
+
+               return JsonResponse(success_json("Successfully got the User object", data), status=200)
+              
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+     
+     def post(self, request, *args, **kwargs):
+        wallet = request.data['wallet']
+        username = request.data['username']
+        password1 = request.data['password1']
+        password2 = request.data['password2']
+        role = request.data['role']
+        if password1 != password2:
+            return JsonResponse("Passwords don't match in POST params!", status=404)
+        if not wallet:
+            return JsonResponse("Missing wallet POST param!", status=404)
+
+        try:
+          role_obj = Role.objects.get(name=role)
+          obj = SustainB3trUser.objects.get(wallet=wallet)
+          obj.username = username
+          obj.password1 = password1
+          obj.role = role_obj
+          obj.save()
+        except SustainB3trUser.DoesNotExist as e:
+          print("UserView post:")
+          new_obj = SustainB3trUser.objects.create(wallet=wallet, username=username,password=password1,role=role_obj)
+          print(new_obj.wallet)
+          return JsonResponse(fail_json(str(e)), status=404)
+     
+        return JsonResponse(success_json("Successfully updated User object"), status=200)
+
+class PostsView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = Post.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Post object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+
+class PostView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = Post.objects.get()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Post object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+     def post(self, request, *args, **kwargs):
+        title = request.data['title']
+        latitude = request.data['latitude']
+        longitude = request.data['longitude']
+        img_bin = request.data['img_bin']
+        img_waste = request.data['img_waste']
+        task_id = request.data['task_id']
+        wallet = request.data['wallet']
+        company = request.data['company'] 
+
+        try:
+          co_obj = Company.objects.get(name=company)
+        except Company.DoesNotExist as e:
+          print("PostView post:")
+          return JsonResponse(fail_json(str(e)), status=404)
+        
+        try:
+          user_obj = SustainB3trUser.objects.get(wallet=wallet)
+        except SustainB3trUser.DoesNotExist as e:
+          print("PostView post:")
+          return JsonResponse(fail_json(str(e)), status=404)
+        
+        try:
+          task_obj = Task.objects.get(id=task_id)
+        except Task.DoesNotExist as e:
+          print("PostView post:")
+          return JsonResponse(fail_json(str(e)), status=404)
+        
+        try:
+          obj = Post.objects.create(
+               title=title, 
+               latitude=latitude,
+               longitude=longitude,
+               img_bin=img_bin,
+               img_waste=img_waste,
+               task_id=task_obj,
+               user_id=user_obj, 
+               company=co_obj
+          )
+        
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully posted Post object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+              
 class CompanyView(APIView):
+     def get(self, request, format=None):
+        try:
+          obj = Company.objects.all()
+          data = serializers.serialize('json', obj)
+          return JsonResponse(success_json("Successfully retrieved Company object", data), status=200)
+        except Exception as e:
+             return JsonResponse(fail_json(str(e)), status=404)
+        
+     def post(self, request, format=None):
+        company_name = request.data['companyName']
+
+        if not (company_name):
+             return JsonResponse("companyName is required GET param!")
+        
+        try:
+             obj = Company.objects.get(name=company_name)
+             return JsonResponse(success_json("Company object already exists"), status=200)
+        except Exception as e:
+             obj = Company.objects.create(name=company_name)
+             return JsonResponse(success_json("Created the Company object"), status=200)
+
+        return JsonResponse(success_json("Successfully updated Company object"), status=200)
+     
      def put(self, request, format=None):
         company_name = request.GET.get('companyName', '')
         youtube_url = request.GET.get('youtubeUrl', '')
@@ -96,68 +316,6 @@ class CompanyView(APIView):
 
         return JsonResponse(success_json("Successfully updated Company object"), status=200)
 
-class FormatCompanyEmotionsView(APIView):
-     def get(self, request, format=None):
-        company_name = request.GET.get('companyName', '')
-
-        if not company_name:
-             return JsonResponse("Missing companyName GET param!")
-        
-        company_emotions = EmotionsUploader()
-        company_emotions.walk_dir()
-
-        return JsonResponse(success_json("Successfully formatted Company emotions"), status=200)
-     
-class GenerateCompanyReportView(APIView):
-    def get(self, request, format=None):
-        company_name = request.GET.get('companyName', '')
-
-        if not company_name:
-             return JsonResponse("Missing companyName GET param!")
-        
-        report_downloader = SustainabilityReportDownloader(company_name)
-        report_downloader.call_company_api()
-
-
-        return JsonResponse(success_json("Successfully generated Company reports"), status=200)
-
-class CompanyReportView(APIView):
-    def get_company(self, company_name):
-        try:
-            return Company.objects.get(name=company_name)
-        except Company.DoesNotExist:
-            raise Http404
-        
-    def get(self, request, format=None):
-        report_url = request.GET.get('reportUrl', '')
-
-        if not report_url:
-             return JsonResponse("Missing reportUrl GET param!", status=404)
-        
-        short_report = open(report_url, 'rb')
-        response = HttpResponse(FileWrapper(short_report), content_type='application/pdf')
-        return response
-        
-    def delete(self, request, format=None):
-        company_name = request.GET.get('companyName', '')
-
-        if not (company_name):
-             return JsonResponse(success_json("companyName is a required GET param!"), status=404)
-        
-        try:
-            company_obj = self.get_company(company_name)
-            reports = CompanyReport.objects.filter(company=company_obj)
-            if len(reports) > 0:
-                for report in reports:
-                    print("deleting report " + str(report.year))
-                    report.delete()
-                msg = "Successfully deleted reports for: " + company_name
-                return JsonResponse(success_json(msg), status=204)
-        except Exception as e:
-             return JsonResponse(fail_json(str(e)), status=404)
-        
-        return JsonResponse(fail_json("Delete was not successfully, probably didn't exist"), status=404)
-    
 # aws bucket
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
